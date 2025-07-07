@@ -34,7 +34,7 @@ const RAW_RUNTIME_STATE =
           ["@types/mocha", "npm:9.1.1"],\
           ["chai", "npm:4.5.0"],\
           ["mocha", "npm:9.2.2"],\
-          ["prettier", "npm:2.8.8"],\
+          ["prettier", "npm:3.6.2"],\
           ["root-workspace-0b6124", "workspace:."],\
           ["ts-mocha", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:10.1.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
@@ -1976,10 +1976,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["prettier", [\
-      ["npm:2.8.8", {\
-        "packageLocation": "../../.yarn/berry/cache/prettier-npm-2.8.8-430828a36c-10c0.zip/node_modules/prettier/",\
+      ["npm:3.6.2", {\
+        "packageLocation": "./.yarn/unplugged/prettier-npm-3.6.2-2668152203/node_modules/prettier/",\
         "packageDependencies": [\
-          ["prettier", "npm:2.8.8"]\
+          ["prettier", "npm:3.6.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2052,7 +2052,7 @@ const RAW_RUNTIME_STATE =
           ["@types/mocha", "npm:9.1.1"],\
           ["chai", "npm:4.5.0"],\
           ["mocha", "npm:9.2.2"],\
-          ["prettier", "npm:2.8.8"],\
+          ["prettier", "npm:3.6.2"],\
           ["root-workspace-0b6124", "workspace:."],\
           ["ts-mocha", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:10.1.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
