@@ -29,8 +29,20 @@ pub fn assert_unique_owners(owners: &[Pubkey]) -> Result<()> {
     Ok(())
 }
 
+// Easier logic for assert unique owners
+/*
+for i in 0..owners.len() {
+    let owner = owners[i];
+    for j in (i+1)..owners.len() {
+        if owners[j] == owner {
+            throw DuplicateOwnersError
+        }
+    }
+}
+*/
+
 #[derive(Accounts)]
-pub struct CreateTransaction<'info> {
+pub struct ProposeTransaction<'info> {
     #[account(
         mut,
         has_one = multisig
@@ -45,4 +57,34 @@ pub struct CreateTransaction<'info> {
 
     #[account()]
     pub system_program: Program<'info, System>,
+}
+
+#[derive(Accounts)]
+pub struct ApproveTransaction<'info> {
+    #[account(
+        mut,
+        has_one = multisig
+    )]
+    pub transaction: Account<'info, Transaction>,
+
+    pub multisig: Account<'info, Multisig>,
+
+    pub owner: Signer<'info>,
+}
+#[derive(Accounts)]
+pub struct ExecuteTransaction<'info> {
+    #[account(
+        mut,
+        has_one = multisig,
+    )]
+    pub transaction: Account<'info, Transaction>,
+
+    pub multisig: Account<'info, Multisig>,
+
+    /// CHECK: this PDA will sign the CPI we dont read write its data
+    #[account(
+        seeds = [b"multisig-signer", multisig.key().as_ref()],
+        bump = multisig.nonce
+    )]
+    pub multisig_signer: UncheckedAccount<'info>,
 }

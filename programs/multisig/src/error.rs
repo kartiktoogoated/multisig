@@ -10,4 +10,11 @@ pub enum MultisigError {
     DuplicateOwners,
     #[msg("The given owner is not part of this multisig.")]
     InvalidOwner,
+    #[msg("Owner set changed since tx was created")]
+    OwnerSetChanged,    
+    #[msg("Not enough signers approved this transaction")]
+    NotEnoughSigners,
+
+    #[msg("This transaction has already been executed")]
+    AlreadyExecuted,
 }
