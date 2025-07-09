@@ -44,15 +44,16 @@ for i in 0..owners.len() {
 #[derive(Accounts)]
 pub struct ProposeTransaction<'info> {
     #[account(
-        mut,
-        has_one = multisig
+        init,
+        payer = proposer,
+        space = 1000
     )]
     pub transaction: Account<'info, Transaction>,
 
     #[account()]
     pub multisig: Account<'info, Multisig>,
 
-    /// CHECK: only validated by position check in handler
+    #[account(mut)]
     pub proposer: Signer<'info>,
 
     #[account()]
